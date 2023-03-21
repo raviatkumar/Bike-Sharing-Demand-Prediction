@@ -1,9 +1,15 @@
 # Bike-Sharing-Demand-Prediction
 
-![Alt text](https://github.com/raviatkumar/Bike-Sharing-Demand-Prediction/blob/main/Image/Bikes.png?raw=true)
+## Tableau
+![Alt text](https://raw.githubusercontent.com/raviatkumar/Bike-Sharing-Demand-Prediction/main/Image/bike%20sharing.PNG)
+
+## Link:https://public.tableau.com/views/SeoulBikeDataPredictionbyRaviKumarbyRaviKumar/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link
+
 ## Problem Description
 
 Currently Rental bikes are introduced in many urban cities for the enhancement of mobility comfort. It is important to make the rental bike available and accessible to the public at the right time as it lessens the waiting time. Eventually, providing the city with a stable supply of rental bikes becomes a major concern. The crucial part is the prediction of bike count required at each hour for the stable supply of rental bikes.
+
+![Alt text](https://github.com/raviatkumar/Bike-Sharing-Demand-Prediction/blob/main/Image/Bikes.png?raw=true)
 
 ## Dataset Description
 
