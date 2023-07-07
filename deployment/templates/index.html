@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" href="/static/icon/bike.png" type="image/png">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* CSS styles for the grid layout */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+    }
+
+    /* CSS styles for the form elements */
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+      // Intercept the form submission event
+      $('form').submit(function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get the form data
+        var formData = $(this).serialize();
+
+        // Send an AJAX POST request to the server
+        $.ajax({
+          type: 'POST',
+          url: '/predict',
+          data: formData,
+          success: function(response) {
+            // Display the prediction result in the result div
+            $('#prediction-result').text('The predicted rented bike count is: ' + response.prediction);
+          },
+          error: function(xhr, status, error) {
+            console.error(error); // Log any errors to the console
+          }
+        });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <h1>Seoul Bike Sharing Prediction (Regression)</h1>
+
+  <!-- Add the video element -->
+  <video autoplay muted width="320" height="240">
+    <source src="/static/background.mp4" type="video/mp4">
+  </video>
+
+  <form action="/predict" method="POST">
+    <div class="grid-container">
+      <div class="grid-item">
+        <label for="hour">Hour:</label>
+        <input type="number" id="hour" name="hour" min="0" max="23" required>
+      </div>
+      <div class="grid-item">
+        <label for="temperature">Temperature:</label>
+        <input type="number" id="temperature" name="temperature" min="-17.8" max="39.4" step="0.1" required>
+      </div>
+      <div class="grid-item">
+        <label for="humidity">Humidity(%):</label>
+        <input type="number" id="humidity" name="humidity" min="0" max="100" required>
+      </div>
+      <div class="grid-item">
+        <label for="windspeed">Wind speed (m/s):</label>
+        <input type="number" id="windspeed" name="windspeed" min="0" max="10" step="0.1" required>
+      </div>
+      <div class="grid-item">
+        <label for="visibility">Visibility (10m):</label>
+        <input type="number" id="visibility" name="visibility" min="0" max="2000" required>
+      </div>
+      <div class="grid-item">
+        <label for="dew_point_temp">Dew point temperature:</label>
+        <input type="number" id="dew_point_temp" name="dew_point_temp" min="-30.6" max="27.2" step="0.1" required>
+      </div>
+      <div class="grid-item">
+        <label for="solar_radiation">Solar Radiation (MJ/m2):</label>
+        <input type="number" id="solar_radiation" name="solar_radiation" required>
+      </div>
+        <div class="grid-item">
+          <label for="rainfall">Rainfall(mm):</label>
+          <input type="number" id="rainfall" name="rainfall" min="0" max="50" required>
+        </div>
+        <div class="grid-item">
+          <label for="snowfall">Snowfall (cm):</label>
+          <input type="number" id="snowfall" name="snowfall" min="0" max="15" step="0.1" required>
+        </div>
+        <div class="grid-item">
+          <label for="seasons">Seasons:</label>
+          <select id="seasons" name="seasons" required>
+            <option value="Winter">Winter</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+            <option value="Autumn">Autumn</option>
+          </select>
+        </div>
+        <div class="grid-item">
+          <label for="holiday">Holiday:</label>
+          <select id="holiday" name="holiday" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        <div class="grid-item">
+          <label for="functioning_day">Functioning Day:</label>
+          <select id="functioning_day" name="functioning_day" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit">Predict</button>
+       
+  <div id="prediction-result"></div>
+
+      <footer>
+        <p class='para'> Github Repository: <a href="https://github.com/raviatkumar/Bike-Sharing-Demand-Prediction" target="_blank">Click Here.</a> </p>
+        <p class='para'> Model made by M Ravi Kumar: <a href="https://www.linkedin.com/in/raviatkumar">Linkedin</a> </p>
+      </footer>
+  </form>
+
+</body>
+</html>
+
