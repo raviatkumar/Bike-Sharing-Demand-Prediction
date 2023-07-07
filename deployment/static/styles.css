@@ -1,0 +1,186 @@
+body {
+    background-image: url('../static/background.mp4');
+    background-attachment:fixed;
+    background-position:center center;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    text-align:center;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+}
+video {
+    /* Position the video element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+h1 {
+    font-weight: bold;
+    font-family: 'Lato', sans-serif;
+    font-size: 35px;
+    letter-spacing: -1px;
+    line-height: 50px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 55px;
+}
+
+form {
+    margin: 10px 10%;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    height: auto;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin-top: 1px;
+    display: block;
+}
+
+hr {
+    height: 1px;
+    color: #123455;
+    background-color: #123455;
+    border: none;
+    margin: 50px 0;
+}
+
+input , select {
+    width: 10.5rem;
+    border-radius : 4px;
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 14px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0px 0px 10px 0px #3498db;
+}
+
+strong {
+    display: block;
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
+    color: #333;
+}
+
+
+.para{
+    font-family: 'Raleway',sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.container {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+button[type="submit"] {
+    font-size: 20px; 
+    padding: 7px 20px;
+    font-weight: bold;
+    background-color: white;
+    color: black; 
+}
+
+#prediction-result {
+    color: #fff; /* White color */
+    font-weight: bold; /* Bold font weight */
+    font-size: 1.2em; /* Increase font size */
+    margin-top: 10px; /* Add top margin for spacing */
+  }
+   
+/* CSS styles for the footer */
+footer {
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .para {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    display: inline; /* Set display to inline */
+  }
+  
+  .para a {
+    color: #2793ba;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .para a:hover {
+    color: #d77e3e; /* Color on hover */
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+/* Responsive */
+@media screen and (max-width: 1400px) {
+    .container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+
+.sendvalue {
+    background-color: #2ecc71; /* green color */
+    width: 300px;
+    height: 60px;
+    border-radius: 8px;
+    color: #fff; /* white text color */
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; /* smooth transition when hover over */
+    text-transform: uppercase; /* makes the text uppercase */
+    letter-spacing: 1px; /* adds 1px space between letters */
+    font-size: 14px; /* increase font-size for better readability */
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.3); /* adds a subtle shadow */
+    justify-content: center; /* centers text horizontally */
+    align-items: center; /* centers text vertically */
+}
+
+.sendvalue:hover {
+    background-color: #27ae60; /* darker green color when hover */
+    transform: translateY(-2px); /* moves the button 2px up */
+}
+
+.sendvalue:active {
+    transform: translateY(2px); /* moves the button 2px down when clicked */
+    box-shadow: none; /* removes the shadow */
+}
