@@ -2,7 +2,10 @@
 ### Deployment using flask
 ###### Project Link: https://github.com/raviatkumar/Bike-Sharing-Demand-Prediction/tree/main/deployment
 
-###### video link: https://drive.google.com/file/d/1aQWxjG0GUZwpY2eP90khsSZ-09LUhl40/view?usp=sharing 
+###### video:
+
+https://github.com/raviatkumar/Bike-Sharing-Demand-Prediction/assets/125804537/f36242ae-3879-4f43-b156-c67a352346d7
+
 
 ## Tableau
 ![Alt text](https://raw.githubusercontent.com/raviatkumar/Bike-Sharing-Demand-Prediction/main/Image/bike%20sharing.PNG)
